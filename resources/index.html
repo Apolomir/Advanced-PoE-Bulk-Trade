@@ -4,15 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <title>Hello World!</title>
+    <title>Advanced PoE Bulk Trade</title>
 </head>
 
-<body>
+<body class="bg-dark">
     <div class="container">
-        <h1>Hello World!</h1>
-        We are using Node.js <span id="node-version"></span>,
-        Chromium <span id="chrome-version"></span>,
-        and Electron <span id="electron-version"></span>.
+        <table class="table table-dark table-stripped">
+            <thead>
+                <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Price for 1 item</th>
+                    <th scope="col">Price for bulk</th>
+                    <th scope="col">Profit</th>
+                </tr>
+            </thead>
+            <tbody id="table-1"></tbody>
+        </table>
     </div>
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/bootstrap.bundle.js"></script>
