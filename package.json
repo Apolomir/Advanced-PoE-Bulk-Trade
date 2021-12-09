@@ -1,0 +1,57 @@
+{
+  "name": "advanced-poe-bulk-trade",
+  "productName": "Advanced PoE Bulk Trade",
+  "version": "0.1.0",
+  "description": "Flipping tool",
+  "main": "resources/js/main.js",
+  "author": "Advanced PoE Bulk Trade",
+  "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.61",
+    "@electron-forge/maker-deb": "^6.0.0-beta.61",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.61",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
+    "@electron-forge/maker-zip": "^6.0.0-beta.61",
+    "electron": "^16.0.4"
+  },
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "asar": true,
+        "extraResource": "resources/data/exchange-data.json",
+        "executableName": "Advanced PoE Bulk Trade",
+        "icon": "resources/assets/icon.ico"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "advanced-poe-bulk-trade"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
