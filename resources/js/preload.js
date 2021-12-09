@@ -2,12 +2,19 @@
 
 // All of the Node.js APIs are available in the preload process.
 // It has the same sandbox as a Chrome extension.
-const fs = require('fs');
-const { contextBridge } = require('electron');
+const { ipcRenderer, contextBridge } = require('electron')
+const shell = require('electron').shell
+// Expose protected methods that allow the renderer process to use
+// the ipcRenderer without exposing the entire object
+contextBridge.exposeInMainWorld(
+    "api", {
+        send: (channel, data) => {
+            ipcRenderer.send(channel, data)
+        },
+        receive: (channel, func) => {
+            ipcRenderer.on(channel, (event, ...args) => func(...args))
+        }
+    }
+)
 
-const exchangeData = fs.readFileSync('resources/data/exchange-data.json', 'utf-8');
-contextBridge.exposeInMainWorld('exchangeData', exchangeData);
-
-window.addEventListener('DOMContentLoaded', () => {
-    
-})
+contextBridge.exposeInMainWorld("shell", shell)

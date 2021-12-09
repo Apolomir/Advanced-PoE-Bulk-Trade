@@ -1,9 +1,10 @@
 {
-  "name": "poe-advanced-tools",
-  "version": "1.0.0",
-  "description": "Hello World!",
+  "name": "advanced-poe-bulk-trade",
+  "productName": "Advanced PoE Bulk Trade",
+  "version": "0.1.0",
+  "description": "Flipping tool",
   "main": "resources/js/main.js",
-  "author": "Yevhenii Rybalko",
+  "author": "Advanced PoE Bulk Trade",
   "license": "MIT",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.61",
@@ -24,13 +25,16 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "asar": true
+        "asar": true,
+        "extraResource": "resources/data/exchange-data.json",
+        "executableName": "Advanced PoE Bulk Trade",
+        "icon": "resources/assets/icon.ico"
       },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "poe_advanced_tools"
+            "name": "advanced-poe-bulk-trade"
           }
         },
         {
