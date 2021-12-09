@@ -1,5 +1,6 @@
 // main.js
 if (require('electron-squirrel-startup')) return;
+require('update-electron-app')()
 // Modules to control application life and create native browser window
 const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require('path')

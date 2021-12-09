@@ -1,11 +1,15 @@
 {
   "name": "advanced-poe-bulk-trade",
   "productName": "Advanced PoE Bulk Trade",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Flipping tool",
   "main": "resources/js/main.js",
   "author": "Advanced PoE Bulk Trade",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Apolomir/Advanced-PoE-Bulk-Trade"
+  },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.61",
     "@electron-forge/maker-deb": "^6.0.0-beta.61",
@@ -20,7 +24,8 @@
     "make": "electron-forge make"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "update-electron-app": "^2.0.1"
   },
   "config": {
     "forge": {
