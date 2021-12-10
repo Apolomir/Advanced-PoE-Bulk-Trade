@@ -1,27 +1,26 @@
 {
   "name": "advanced-poe-bulk-trade",
   "productName": "Advanced PoE Bulk Trade",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Flipping tool",
   "main": "resources/js/main.js",
   "author": "Advanced PoE Bulk Trade",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Apolomir/Advanced-PoE-Bulk-Trade"
-  },
+  "repository": "https://github.com/Apolomir/Advanced-PoE-Bulk-Trade",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.61",
     "@electron-forge/maker-deb": "^6.0.0-beta.61",
     "@electron-forge/maker-rpm": "^6.0.0-beta.61",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
     "@electron-forge/maker-zip": "^6.0.0-beta.61",
+    "@electron-forge/publisher-github": "^6.0.0-beta.61",
     "electron": "^16.0.4"
   },
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
@@ -55,6 +54,18 @@
         {
           "name": "@electron-forge/maker-rpm",
           "config": {}
+        }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "Apolomir",
+              "name": "Advanced-PoE-Bulk-Trade"
+            },
+            "prerelease": true
+          }
         }
       ]
     }
